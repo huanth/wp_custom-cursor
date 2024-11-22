@@ -1,0 +1,71 @@
+/* Ẩn con trỏ mặc định của trình duyệt */
+body,
+body * {
+    cursor: none !important;
+    /* Áp dụng cho tất cả phần tử */
+}
+
+/* Định dạng con trỏ custom */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+    /* Ngăn tương tác với con trỏ */
+    transform-origin: center;
+    /* Để hiệu ứng scale mượt mà */
+}
+
+.custom-cursor.circle {
+    background-color: red;
+    border-radius: 50%;
+}
+
+.custom-cursor.dot {
+    background-color: blue;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+.custom-cursor.triangle {
+    background-color: green;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+    /* Prevent interference */
+    transform-origin: center;
+    /* Center rotation */
+    transition: transform 0.3s ease;
+    /* Smooth rotation */
+}
+
+@keyframes cursor-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+    /* Prevent interference */
+    transform-origin: center;
+    /* Center rotation */
+    animation: none;
+    /* Default: No animation */
+}
